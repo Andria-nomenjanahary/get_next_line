@@ -6,7 +6,7 @@
 /*   By: yvoandri <yvoandri@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:24:25 by yvoandri          #+#    #+#             */
-/*   Updated: 2026/02/13 15:06:16 by yvoandri         ###   ########.fr       */
+/*   Updated: 2026/02/17 09:05:41 by yvoandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_strdup(const char *s)
 	char	*res;
 
 	if (!s)
-		return (NULL);
+		return (malloc(1));
 	i = 0;
 	len = ft_strlen(s);
 	res = malloc((len + 1) * sizeof(char));
@@ -70,6 +70,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = 0;
 	res = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!res)
